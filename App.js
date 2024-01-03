@@ -15,6 +15,7 @@ import {
 import Header from "./components/Header";
 import TodoItem from "./components/TodoItem";
 import AddTodo from "./components/AddTodo";
+import Sandbox from "./components/Sandbox";
 
 export default function App() {
   const [todo, setTodo] = useState([
@@ -68,7 +69,6 @@ export default function App() {
           <View style={styles.list}>
             <FlatList
               data={todo}
-              keyExtractor={(item) => item.key.toString()}
               renderItem={({ item }) => (
                 <TodoItem item={item} handlePress={handlePassItems} />
               )}
@@ -89,8 +89,12 @@ const styles = StyleSheet.create({
   },
   content: {
     padding: 40,
+
+    flex: 1,
   },
   list: {
     marginTop: 20,
+
+    flex: 1,
   },
 });
